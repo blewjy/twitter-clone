@@ -5,43 +5,18 @@
         class="relative flex justify-center flex-1 lg:justify-start lg:items-center"
       >
         <div
-          class="absolute inset-0 w-full h-content hidden lg:flex p-4 items-center"
+          class="absolute inset-0 w-full h-content hidden lg:flex p-4 items-center hide-on-short"
         >
+          <InputBox class="w-52 h-16 ml-4" placeholder="Phone, email or userna..." />
           <div class="relative">
-            <input
-              class="w-52 h-16 border border-gray-300 rounded-md text-lg ml-4 focus:outline-none focus:ring-twitter-blue focus:ring-2 focus:ring-inset"
-              type="text"
-            />
-            <span
-              class="absolute text-lg text-gray-500 left-7 top-4.5 pointer-events-none"
-              >Phone, email or usern...</span
-            >
-          </div>
-          <div class="relative">
-            <input
-              class="w-52 h-16 border border-gray-300 rounded-md text-lg ml-4 focus:outline-none focus:ring-twitter-blue focus:ring-2 focus:ring-inset"
-              type="password"
-              @focus="passwordOnFocus"
-              @blur="passwordOnBlur"
-            />
-            <span
-              id="password-span"
-              style="font-size: 1.125rem; line-height: 1.75rem"
-              class="transition-all duration-100 ease-in-out absolute text-gray-500 left-7 top-4.5 pointer-events-none"
-              >Password</span
-            >
-
+            <InputBox class="w-52 h-16 ml-4" placeholder="Password" />
             <a
               class="absolute left-7 -bottom-6 text-sm text-twitter-dark-blue text-sm hover:underline"
               href="#"
               >Forgot password?</a
             >
           </div>
-          <button
-            class="h-content py-3 px-8 ml-4 rounded-full border border-solid border-twitter-blue font-bold text-twitter-blue hover:bg-twitter-blue hover:bg-opacity-10"
-          >
-            Log in
-          </button>
+          <Button class="py-3 px-6 ml-4" type="accent" label="Log in" />
         </div>
         <div class="flex-1 flex flex-col px-10 py-10 sm:max-w-2xl">
           <img class="h-10 w-10" src="../assets/logo_twitter.svg" alt="" />
@@ -54,26 +29,26 @@
             Join Twitter today.
           </h2>
           <div class="mt-2 xs:flex lg:flex-col">
-            <button
-              class="w-full xs:mr-4 lg:w-2/3 mt-4 py-3 bg-twitter-blue text-white font-bold rounded-full hover:bg-twitter-dark-blue"
-            >
-              Sign up
-            </button>
-            <button
-              class="w-full lg:w-2/3 mt-4 py-3 rounded-full border border-solid border-twitter-blue font-bold text-twitter-blue hover:bg-twitter-blue hover:bg-opacity-10"
-            >
-              Log in
-            </button>
+            <Button
+              class="w-full mt-4 py-3 xs:mr-4 lg:w-2/3"
+              type="primary"
+              label="Sign up"
+            />
+            <Button
+              class="w-full mt-4 py-3 xs:mr-4 lg:w-2/3"
+              type="accent"
+              label="Log in"
+            />
           </div>
         </div>
       </div>
       <div class="relative xl:max-w-1/2">
         <img
-          class="w-full h-132 lg:w-auto lg:h-full object-cover"
+          class="w-full h-132 lg:h-full object-cover"
           src="../assets/splashscreen.png"
           alt=""
         />
-        <div class="absolute inset-0 w-full h-full p-12">
+        <div class="absolute inset-0 w-full h-full p-16">
           <img
             class="m-auto w-full h-full max-w-md max-h-md"
             src="../assets/logo_twitter_main.svg"
@@ -95,6 +70,9 @@
 </template>
 
 <script setup>
+import InputBox from "./InputBox.vue";
+import Button from "./Button.vue";
+
 const bottomLinks = [
   "About",
   "Help Center",
@@ -114,23 +92,13 @@ const bottomLinks = [
   "Settings",
   "© 2021 Twitter, Inc.",
 ];
-
-function passwordOnBlur() {
-  const passwordSpan = document.getElementById("password-span");
-  passwordSpan.classList.remove("text-twitter-blue");
-  passwordSpan.style.fontSize = "1.125rem";
-  passwordSpan.style.lineHeight = "1.75rem";
-}
-
-function passwordOnFocus() {
-  const passwordSpan = document.getElementById("password-span");
-  passwordSpan.classList.add("text-twitter-blue");
-  passwordSpan.style.fontSize = "0.875rem";
-  passwordSpan.style.lineHeight = "1.25rem";
-  passwordSpan.classList.add("left-0");
-  passwordSpan.classList.add("top-0");
-}
 </script>
 
 <style>
+@media (max-height: 768px) {
+  .hide-on-short {
+    display: none !important;
+    background-color: red;
+  }
+}
 </style>

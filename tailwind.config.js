@@ -10,6 +10,9 @@ module.exports = {
         'twitter-blue': '#1DA1F2',
         'twitter-dark-blue': '#1a91da'
       },
+      padding: {
+        '4.5': '1.125rem'
+      },
       width: {
         '84': '21rem',
         '144': '36rem',
@@ -35,7 +38,8 @@ module.exports = {
         'full': '100%',
       },
       inset: {
-        '4.5': '1.125rem'
+        '4.5': '1.125rem',
+        '5.5': '1.375rem'
       }
     },
   },
