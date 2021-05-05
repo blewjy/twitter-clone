@@ -2,14 +2,13 @@
   <div class="relative">
     <input
       v-model="model"
-      class="w-full h-full pt-4.5 px-3 border border-gray-300 rounded-md text-lg focus:outline-none focus:ring-twitter-blue focus:ring-2 focus:ring-inset"
+      class="w-full h-full pt-5 px-3 border border-gray-300 rounded-md text-lg focus:outline-none focus:ring-twitter-blue focus:ring-2 focus:ring-inset"
       type="text"
       @focus="onFocus"
       @blur="onBlur"
     />
     <span
       ref="span"
-      id="span-id"
       class="transition-all duration-100 ease-in-out absolute text-gray-500 left-3 top-5.5 pointer-events-none"
       >{{ placeholder }}</span
     >

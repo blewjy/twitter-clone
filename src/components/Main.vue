@@ -11,7 +11,7 @@
           <div class="relative">
             <InputBox class="w-52 h-16 ml-4" placeholder="Password" />
             <a
-              class="absolute left-7 -bottom-6 text-sm text-twitter-dark-blue text-sm hover:underline"
+              class="absolute left-7 -bottom-6 text-sm text-twitter-dark-blue hover:underline"
               href="#"
               >Forgot password?</a
             >
